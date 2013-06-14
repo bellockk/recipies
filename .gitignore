@@ -1,0 +1,6 @@
+*.pyc
+*.a
+*.aux
+*.toc
+*.bib
+*.dvi
