@@ -4,3 +4,4 @@
 *.toc
 *.bib
 *.dvi
+/build
