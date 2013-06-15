@@ -5,3 +5,5 @@
 *.bib
 *.dvi
 /build
+.sconsign.dblite
+.pydevproject
