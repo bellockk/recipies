@@ -1,7 +1,8 @@
-#!/usr/bin/python
 import os
-VariantDir('build','code',duplicate=0)
-env = Environment(ENV=os.environ)
-dst = env.PDF('build/Recipies.tex')
-inst = env.Install('doc',dst)
-Default(inst)
+path = ['/usr/local/texlive/2012/bin/x86_64-linux',
+        '/bin',
+        '/usr/bin',
+        '/opt/bin',
+        '/usr/local/bin']
+env = Environment(ENV={'PATH':path})
+SConscript('SConscript', exports = ['env'])
