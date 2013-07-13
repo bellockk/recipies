@@ -1,5 +1,5 @@
 import os
-path = ['/usr/local/texlive/2012/bin/x86_64-linux',
+path = ['/nfs/msdev/texlive/2013/bin/x86_64-linux',
         '/bin',
         '/usr/bin',
         '/opt/bin',
