@@ -1,8 +1,4 @@
-import os
-path = ['/nfs/msdev/texlive/2013/bin/x86_64-linux',
-        '/bin',
-        '/usr/bin',
-        '/opt/bin',
-        '/usr/local/bin']
-env = Environment(ENV={'PATH':path})
-SConscript('SConscript', exports = ['env'])
+env = Environment()
+env.Append(PDFLATEXFLAGS=['-halt-on-error', '-shell-escape'])
+SConscript('src/SConscript', variant_dir='build', duplicate=1,
+           exports=['env'])
