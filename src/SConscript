@@ -1,10 +1,12 @@
 import os
 Import('env')
 local_env = env.Clone()
-root = os.path.dirname(Dir('.').srcnode().abspath)
+srcnode = Dir('.').srcnode().abspath
+recipies = os.path.join(srcnode, 'recipies')
+root = os.path.dirname(srcnode)
 media_path = os.path.join(root, 'media')
 common_path = os.path.join(root, 'common')
 local_env.PrependENVPath('PATH', common_path)
-local_env.Append(TEXINPUTS=[media_path, common_path])
+local_env.Append(TEXINPUTS=[media_path, common_path, recipies])
 pdf = local_env.PDF('document.tex')
 inst = env.InstallAs('../dist/Recipies.pdf', pdf)
